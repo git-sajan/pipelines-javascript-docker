@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  - group: "For_Docker"
+  - group: "For_Dockerr"
 
 stages:
 - stage: Build
