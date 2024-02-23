@@ -12,10 +12,6 @@ variables:
   # Container registry service connection established during pipeline creation
   - group: "For_Docker"
 
-  # Agent VM image name
-pool:
-    vmImage: 'ubuntu-latest'
-
 stages:
 - stage: Build
   displayName: Build and push stage
