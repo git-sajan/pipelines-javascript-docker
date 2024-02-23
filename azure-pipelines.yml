@@ -2,6 +2,9 @@
 # Build and push an image to Azure Container Registry
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
+variables:
+- group: "For_Docker"
+
 trigger:
 - main
 
@@ -10,7 +13,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: $(sajancontainerservconnection)
+  dockerRegistryServiceConnection: $(sajancontainerconnection)
   imageRepository: 'javascriptdocker'
   containerRegistry: 'sajancontainer.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/app/Dockerfile'
