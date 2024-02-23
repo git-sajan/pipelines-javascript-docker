@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '178fb060-71d8-4219-ace3-12727d242c14'
+  dockerRegistryServiceConnection: $(sajancontainerservconnection)
   imageRepository: 'javascriptdocker'
   containerRegistry: 'sajancontainer.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/app/Dockerfile'
@@ -34,7 +34,6 @@ stages:
         command: buildAndPush
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
-#        containerRegistry: $(dockerRegistryServiceConnection)
-         containerRegistry: sajancontainerrrr
+        containerRegistry: $(dockerRegistryServiceConnection)
         tags: |
           $(tag)
