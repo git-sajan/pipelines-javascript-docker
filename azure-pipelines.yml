@@ -10,7 +10,7 @@ resources:
 
 variables:
   # Container registry service connection established during pipeline creation
-  - group: "For_Dockerr"
+  - group: "For_Docker"
 
 stages:
 - stage: Build
@@ -27,6 +27,6 @@ stages:
         command: buildAndPush
         repository: $(imageRepository)
         dockerfile: $(dockerfilePath)
-        containerRegistry: $(dockerRegistryServiceConnection)
+        containerRegistry: $(dockerRegistrycServiceConnection)
         tags: |
           $(tag)
